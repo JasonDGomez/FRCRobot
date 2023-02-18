@@ -74,7 +74,7 @@ public final class Constants {
 
     public static final int VACUUM_MOTOR_ID = 0;
 
-    public static final int INTAKE_MOTOR_ID = 0;
+    public static final int INTAKE_MOTOR_ID = 16;
 
     public static final int SOLENOID_FORWARD_CHANNEL = 0;
     public static final int SOLENOID_REVERSE_CHANNEL = 0;

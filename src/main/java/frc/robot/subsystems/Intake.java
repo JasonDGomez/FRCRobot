@@ -5,6 +5,7 @@ import java.util.function.DoubleSupplier;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
@@ -21,6 +22,11 @@ public class Intake extends SubsystemBase {
 
 
     public void intakeItem(DoubleSupplier leftTrigger, DoubleSupplier rightTrigger){
+
+
+        SmartDashboard.putNumber("Left Trigger", leftTrigger.getAsDouble());
+        SmartDashboard.putNumber("Right Trigger", rightTrigger.getAsDouble());
+
         if(leftTrigger.getAsDouble() > 0 && rightTrigger.getAsDouble() == 0 ){
             motor.set(ControlMode.PercentOutput, leftTrigger.getAsDouble());
         
