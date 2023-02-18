@@ -65,7 +65,7 @@ public final class Constants {
 
     public static final SwerveDriveKinematics kinematics = new SwerveDriveKinematics(Constants.FRONT_LEFT_LOCATION, Constants.FRONT_RIGHT_LOCATION, Constants.BACK_LEFT_LOCATION, Constants.BACK_RIGHT_LOCATION);
 
-    public static final double MAX_VELOCITY_METERS_PER_SECOND =  5.48; //6380 / (60 * 12.8) * WHEEL_DIAMETER * Math.PI;
+    public static final double MAX_VELOCITY_METERS_PER_SECOND =  6.5;  
     public static final double MAX_ANGULAR_VELOCITY = MAX_VELOCITY_METERS_PER_SECOND / Math.hypot(TRACK_WIDTH_METERS / 2, WHEEL_BASE_METERS / 2); // angular velocity = linear velocity / radius
     public static final double MAX_ANGULAR_ACCELERATION = MAX_ANGULAR_VELOCITY / 2;
 

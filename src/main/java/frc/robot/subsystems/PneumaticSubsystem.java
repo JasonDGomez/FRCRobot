@@ -9,12 +9,11 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 public class PneumaticSubsystem extends SubsystemBase {
-    private final Compressor compressor;
+   
     private final DoubleSolenoid solenoids;
-    private final EventLoop vacLoop = new EventLoop();
+  
 
     public PneumaticSubsystem(){
-        compressor = new Compressor(PneumaticsModuleType.CTREPCM);
         solenoids = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.SOLENOID_FORWARD_CHANNEL, Constants.SOLENOID_REVERSE_CHANNEL);
     }
 

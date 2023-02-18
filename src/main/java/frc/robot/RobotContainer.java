@@ -45,7 +45,7 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final SwerveDrivetrain drivetrain = new SwerveDrivetrain();
   private final XboxController controller = new XboxController(Constants.XBOX_CONTROLLER_ID);
-  private final Vacuum vacuum = new Vacuum();
+  //private final Vacuum vacuum = new Vacuum();
   private final Intake intake = new Intake();
   SendableChooser<Command> chooser = new SendableChooser<>();
   PneumaticSubsystem pneumaticSubsystem = new PneumaticSubsystem();
@@ -120,8 +120,8 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
         
-         new POVButton(controller, 180).whileTrue(new CreateVacuum(vacuum));
-         new POVButton(controller,0).whileTrue(new ReleaseVacuum(vacuum));
+        // new POVButton(controller, 180).whileTrue(new CreateVacuum(vacuum));
+       //  new POVButton(controller,0).whileTrue(new ReleaseVacuum(vacuum));
          
          //Trigger rightBumper = new Trigger(() -> controller.getRightBumper());
 
