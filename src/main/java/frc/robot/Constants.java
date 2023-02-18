@@ -80,7 +80,8 @@ public final class Constants {
     public static final int SOLENOID_REVERSE_CHANNEL = 0;
 
     public static final TrapezoidProfile.Constraints thetaControllerConstraints = new TrapezoidProfile.Constraints(MAX_ANGULAR_VELOCITY, MAX_ANGULAR_ACCELERATION );
-     
+    
+    public static final int FORKLIFT_MOTOR_ID = 0; //Change later
     
 
     public enum MotorType{

@@ -25,15 +25,16 @@ import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
-import frc.robot.commands.CreateVacuum;
+ 
 import frc.robot.commands.DefaultDrive;
+import frc.robot.commands.ForkLiftMove;
 import frc.robot.commands.IntakeItem;
 import frc.robot.commands.PneumaticMove;
-import frc.robot.commands.ReleaseVacuum;
+import frc.robot.subsystems.Forklift;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.PneumaticSubsystem;
 import frc.robot.subsystems.SwerveDrivetrain;
-import frc.robot.subsystems.Vacuum;
+ 
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -45,6 +46,7 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final SwerveDrivetrain drivetrain = new SwerveDrivetrain();
   private final XboxController controller = new XboxController(Constants.XBOX_CONTROLLER_ID);
+  private final Forklift forklift = new Forklift();
   //private final Vacuum vacuum = new Vacuum();
   private final Intake intake = new Intake();
   SendableChooser<Command> chooser = new SendableChooser<>();
@@ -73,7 +75,11 @@ public class RobotContainer {
        () -> triggerDeadband(controller.getRightTriggerAxis()),
        () -> controller.getRightBumper()));
 
+      forklift.setDefaultCommand(new ForkLiftMove(forklift,
+       () -> controller.getAButton(),
+       () -> controller.getYButton()
       
+      ));
        
      
     
