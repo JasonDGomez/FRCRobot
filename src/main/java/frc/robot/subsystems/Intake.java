@@ -11,12 +11,12 @@ import frc.robot.Constants;
 
 public class Intake extends SubsystemBase {
     private final TalonFX motor;
-    private final PneumaticSubsystem pneumaticSubsystem;
+    
     private boolean intakeOut;
 
     public Intake(){
         motor = new TalonFX(Constants.INTAKE_MOTOR_ID);
-        pneumaticSubsystem = new PneumaticSubsystem();
+        
         intakeOut = false;
     }
 

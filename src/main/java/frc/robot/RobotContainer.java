@@ -62,7 +62,7 @@ public class RobotContainer {
         () -> (deadband(controller.getRightX()) * Constants.MAX_ANGULAR_VELOCITY) * 0.4
          ));
 
-     intake.setDefaultCommand(new IntakeItem(intake,
+     intake.setDefaultCommand(new IntakeItem(intake, 
        () -> triggerDeadband(controller.getLeftTriggerAxis()),
          () -> triggerDeadband(controller.getRightTriggerAxis())));
 

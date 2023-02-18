@@ -4,11 +4,13 @@ import java.util.function.DoubleSupplier;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.PneumaticSubsystem;
 
 public class IntakeItem extends CommandBase {
 
          Intake intake;
          DoubleSupplier leftTrigger, rightTrigger;
+    
 
         public IntakeItem(Intake intake, DoubleSupplier leftTrigger, DoubleSupplier rightTrigger ){
             this.intake = intake;
