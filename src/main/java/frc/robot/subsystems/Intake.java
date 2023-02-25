@@ -28,10 +28,10 @@ public class Intake extends SubsystemBase {
         SmartDashboard.putNumber("Right Trigger", rightTrigger.getAsDouble());
 
         if(leftTrigger.getAsDouble() > 0 && rightTrigger.getAsDouble() == 0 ){
-            motor.set(ControlMode.PercentOutput, leftTrigger.getAsDouble());
+            motor.set(ControlMode.PercentOutput, leftTrigger.getAsDouble() / 2);
         
         } else if(leftTrigger.getAsDouble() == 0 && rightTrigger.getAsDouble() > 0){
-            motor.set(ControlMode.PercentOutput, -rightTrigger.getAsDouble()); 
+            motor.set(ControlMode.PercentOutput, -rightTrigger.getAsDouble() / 5); 
               
         } else{
             doNothing();

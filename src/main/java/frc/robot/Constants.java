@@ -77,7 +77,7 @@ public final class Constants {
     public static final int INTAKE_MOTOR_ID = 16;
 
     public static final int SOLENOID_FORWARD_CHANNEL = 0;
-    public static final int SOLENOID_REVERSE_CHANNEL = 0;
+    public static final int SOLENOID_REVERSE_CHANNEL = 1;
 
     public static final TrapezoidProfile.Constraints thetaControllerConstraints = new TrapezoidProfile.Constraints(MAX_ANGULAR_VELOCITY, MAX_ANGULAR_ACCELERATION );
     

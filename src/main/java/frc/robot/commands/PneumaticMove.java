@@ -33,7 +33,7 @@ public class PneumaticMove extends CommandBase {
         if(rightTrigger.getAsDouble() > 0 || rightBumper.getAsBoolean() && !intakeOut){
             pneumatics.pneumaticExtend();
             intakeOut = true;
-        } else if(rightTrigger.getAsDouble() == 0 && !rightBumper.getAsBoolean() && intakeOut){
+        } else if((rightTrigger.getAsDouble() == 0 && leftTrigger.getAsDouble() == 0) && !rightBumper.getAsBoolean() && intakeOut){
             pneumatics.pneumaticRetract();
             intakeOut = false;
         } else{
