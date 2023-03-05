@@ -3,7 +3,9 @@ package frc.robot.subsystems;
 import java.util.function.DoubleSupplier;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
+import com.ctre.phoenix.motorcontrol.can.TalonFXConfiguration;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -15,7 +17,10 @@ public class Intake extends SubsystemBase {
     private boolean intakeOut;
 
     public Intake(){
+        
+
         motor = new TalonFX(Constants.INTAKE_MOTOR_ID);
+        motor.setNeutralMode(NeutralMode.Brake);
         
         intakeOut = false;
     }
@@ -34,7 +39,7 @@ public class Intake extends SubsystemBase {
             motor.set(ControlMode.PercentOutput, -rightTrigger.getAsDouble() / 5); 
               
         } else{
-            doNothing();
+            slightReverse();
         }
     }
 
@@ -46,6 +51,10 @@ public class Intake extends SubsystemBase {
       
         motor.set(ControlMode.PercentOutput,0);
 }
+
+    public void slightReverse(){
+        motor.set(ControlMode.PercentOutput,-0.05);
+    }
 
 
 }
