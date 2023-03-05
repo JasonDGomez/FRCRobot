@@ -86,7 +86,15 @@ public class SwerveMotor {
 
      public void setDriveMotor(double velocity){
         // double output = (velocity * 60.0 / (Math.PI * Constants.WHEEL_DIAMETER)) * 6.12;
+
+        if(velocity == 0){
+            motor.set(ControlMode.PercentOutput, -0.05);
+        }
+         
+        else{
          motor.set(ControlMode.PercentOutput, velocity / Constants.MAX_VELOCITY_METERS_PER_SECOND);
+        }
+        
      }
 
      
